@@ -46,7 +46,7 @@ set number
 set backspace=indent,eol,start
 
 " Colorcolumn
-set textwidth=100
+set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn guibg=Orange
 
