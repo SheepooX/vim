@@ -1,3 +1,5 @@
+" Sorcery: remove trailing black lines
+let &t_ut=''
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -17,19 +19,34 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-bundler'
+Plug 'vim-scripts/taglist.vim'
+" Colour schemes
+Plug 'icymind/neosolarized'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 " PLUGIN SETTINGS
 " Ctrlp search in nearest ancestoral directory that contains .git directory
-let g:ctrlp_working_path_moode = 'ra'
+let g:ctrlp_working_path_moode='ra'
 " vim-airline
 set ttimeoutlen=10
-let g:airline_theme='light'
+let g:airline_theme='gruvbox'
+
+" Color scheme
+syntax enable
+set background=dark
+set termguicolors
+
+" Gruvbox dark
+colorscheme gruvbox
+let g:gruvbox_conrast_dark='medium'
+
+" Solarized
+" colorscheme NeoSolarized
 
 " Monokai
-syntax enable
-colorscheme monokai
+" colorscheme monokai
 
 " Indenting
 set shiftwidth=2
@@ -47,7 +64,7 @@ set backspace=indent,eol,start
 
 " Colorcolumn
 set textwidth=80
-set colorcolumn=+1
+set colorcolumn=+0
 highlight ColorColumn guibg=Orange
 
 " KEY MAPS
@@ -56,17 +73,32 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
 " Space for INSERT MODE
 nnoremap <Space> i
+
 " Tab switching
 noremap <F7> :tabp <Enter>
 noremap <F8> :tabn <Enter>
+
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Split navigation
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+
+" Split resizing
+nnoremap <C-,> <C-W><>>
+nnoremap <C-/> <C-W><>>
+nnoremap <C-+> <C-W><+>
+nnoremap <C--> <C-W><->
+
+" Taglist
+map <C-M> :TlistToggle<CR>
+map <C-L> :TlistAddFilesRecursive .<CR>
+
