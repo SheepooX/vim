@@ -20,6 +20,9 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-bundler'
 Plug 'vim-scripts/taglist.vim'
+Plug 'kuniwak/vint'
+Plug 'plasticboy/vim-markdown'
+" Plug 'valloric/youcompleteme'
 " Colour schemes
 Plug 'icymind/neosolarized'
 Plug 'morhetz/gruvbox'
@@ -32,6 +35,11 @@ let g:ctrlp_working_path_moode='ra'
 " vim-airline
 set ttimeoutlen=10
 let g:airline_theme='gruvbox'
+" if !exists('g:airline_symbols')
+	" let g:airline_symbols = {}
+" endif
+" let g:airline_symbols.space = "\ua0"
+" let g:airline_powerline_fonts=1
 
 " Color scheme
 syntax enable
@@ -39,12 +47,12 @@ set background=dark
 set termguicolors
 
 " Gruvbox dark
-colorscheme gruvbox
 let g:gruvbox_conrast_dark='medium'
+colorscheme gruvbox
 
+" UNUSED THEMES
 " Solarized
 " colorscheme NeoSolarized
-
 " Monokai
 " colorscheme monokai
 
@@ -67,6 +75,14 @@ set textwidth=80
 set colorcolumn=+0
 highlight ColorColumn guibg=Orange
 
+" Disable folding
+set nofoldenable
+"
+" Custom theming
+hi Normal guibg=NONE ctermbg=NONE
+" hi NonText guibg=NONE ctermbg=NONE
+
+
 " KEY MAPS
 " Disablee arrow keys in normal mode
 noremap <Up> <Nop>
@@ -82,7 +98,7 @@ noremap <F7> :tabp <Enter>
 noremap <F8> :tabn <Enter>
 
 " NerdTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-N> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -99,6 +115,6 @@ nnoremap <C-+> <C-W><+>
 nnoremap <C--> <C-W><->
 
 " Taglist
-map <C-M> :TlistToggle<CR>
-map <C-L> :TlistAddFilesRecursive .<CR>
+map <C-M><C-T> :TlistToggle<CR>
+map <C-M><C-R> :TlistAddFilesRecursive .<CR>
 
