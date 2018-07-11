@@ -22,6 +22,7 @@ Plug 'tpope/vim-bundler'
 Plug 'vim-scripts/taglist.vim'
 Plug 'kuniwak/vint'
 Plug 'plasticboy/vim-markdown'
+Plug 'evidens/vim-twig'
 " Plug 'valloric/youcompleteme'
 " Colour schemes
 Plug 'icymind/neosolarized'
