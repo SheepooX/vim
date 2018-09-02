@@ -1,5 +1,12 @@
 " Sorcery: remove trailing black lines
 let &t_ut=''
+
+" Additional highlighting
+call matchadd('Conceal', '*')
+call matchadd('Conceal', '->')
+call matchadd('Conceal', 'DONE')
+call matchadd('Conceal', 'REPLACE')
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -58,11 +65,10 @@ colorscheme gruvbox
 " colorscheme monokai
 
 " Indenting
-set shiftwidth=2
-set tabstop=2
-set autoindent
-set smartindent
-set cindent
+filetype plugin indent on
+set shiftwidth=4
+set tabstop=4
+set expandtab
 
 " Relative and current line numbers
 set relativenumber

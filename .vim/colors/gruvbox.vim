@@ -1001,7 +1001,7 @@ hi! link clojureUnquote GruvboxYellow
 " C: {{{
 
 hi! link cOperator GruvboxPurple
-hi! link cStructure GruvboxOrange
+hi! link cStructure GruvboxRed
 
 " }}}
 " Python: {{{
