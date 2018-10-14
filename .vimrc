@@ -10,39 +10,49 @@ call matchadd('Conceal', 'REPLACE')
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-scripts/tComment'
+Plug 'vim-scripts/taglist.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tmhedberg/matchit'
 Plug 'sickill/vim-pasta'
-Plug 'ervandew/supertab'
-Plug 'vim-scripts/tComment'
-Plug 'vim-scripts/ZoomWin'
-Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
 Plug 'rstacruz/sparkup'
-Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-bundler'
-Plug 'vim-scripts/taglist.vim'
-Plug 'kuniwak/vint'
+Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'evidens/vim-twig'
-" Plug 'valloric/youcompleteme'
 " Colour schemes
 Plug 'icymind/neosolarized'
 Plug 'morhetz/gruvbox'
+" Julia
+Plug 'benekastah/neomake'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'zyedidia/julialint.vim'
+" Rockstar
+Plug 'sirosen/vim-rockstar'
+" Sassy css
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'jlong/sass-convert.vim'
+" Rainbow
+Plug 'luochen1990/rainbow'
+" Linting
+Plug 'scrooloose/syntastic'
 
 call plug#end()
 
 " PLUGIN SETTINGS
 " Ctrlp search in nearest ancestoral directory that contains .git directory
 let g:ctrlp_working_path_moode='ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 " vim-airline
 set ttimeoutlen=10
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
 " if !exists('g:airline_symbols')
 	" let g:airline_symbols = {}
 " endif
@@ -122,6 +132,6 @@ nnoremap <C-+> <C-W><+>
 nnoremap <C--> <C-W><->
 
 " Taglist
-map <C-M><C-T> :TlistToggle<CR>
-map <C-M><C-R> :TlistAddFilesRecursive .<CR>
+map <C-M> :TlistToggle<CR>
+map <C-L><C-R> :TlistAddFilesRecursive .<CR>
 
